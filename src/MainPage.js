@@ -1,4 +1,5 @@
 import React from 'react'
+import SearchButton from './SearchButton'
 
 class MainPage extends React.Component {
   render() {
@@ -13,9 +14,9 @@ class MainPage extends React.Component {
 
           </div>
         </div>
-        <div className="open-search">
-          <a>Add a book</a>
-        </div>
+
+        {/* Extract Search button to clean up mainpage */}
+        <SearchButton />
       </div>
     )
   }
