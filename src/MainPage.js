@@ -13,9 +13,9 @@ class MainPage extends React.Component {
 
         <div className="list-books-content">
           <div>
-            <Bookshelf shelf="Currently Reading" />
-            <Bookshelf shelf="Want to Read" />
-            <Bookshelf shelf="Read" />
+            <Bookshelf shelf="Currently Reading" books={this.props.books}/>
+            <Bookshelf shelf="Want to Read" books={this.props.books} />
+            <Bookshelf shelf="Read" books={this.props.books}/>
           </div>
         </div>
 

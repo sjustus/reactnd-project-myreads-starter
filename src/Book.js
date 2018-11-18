@@ -2,6 +2,7 @@ import React from 'react'
 import BookshelfChanger from './BookshelfChanger'
 
 class Book extends React.Component {
+
   render() {
     return (
       <li>
