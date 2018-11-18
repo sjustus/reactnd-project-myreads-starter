@@ -5,6 +5,7 @@ import './App.css'
 import MainPage from './MainPage'
 
 class BooksApp extends React.Component {
+  // use constructor when initializing state
   constructor(props) {
     super(props);
     // set state of books in App to pass to MainPage and SearchPage
@@ -32,7 +33,7 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
         {/* use render to pass props to rendered components - React Router docs*/}
-        <Route exact path="/" render={(props) => <MainPage books={this.state.books} />}
+        <Route exact path="/" render={(props) => <MainPage books={this.state.books} />} />
       {/*  <Route path="/search" component={Search} />*/}
       </div>
     )
