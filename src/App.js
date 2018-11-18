@@ -32,7 +32,7 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-        {/* use render to pass props to rendered components - React Router docs*/}
+        {/* use render to pass props to rendered components - React Router docs [https://reacttraining.com/react-router/web/guides/basic-components]*/}
         <Route exact path="/" render={(props) => <MainPage books={this.state.books} />} />
       {/*  <Route path="/search" component={Search} />*/}
       </div>

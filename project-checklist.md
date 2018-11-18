@@ -9,8 +9,8 @@ Checked Box: ☑︎
 ☐ │   ├── Neat organization
 ☐ │   ╰── Easy-to-follow instructions
 ☐ ├── ⟐ Main Page
-☐ │   ├── 3 shelves, and each book is shown on correct shelf
-☐ │   ├── ⬦ Displays a control to move books from one shelf to another
+☑︎ │   ├── 3 shelves, and each book is shown on correct shelf
+☑︎ │   ├── ⬦ Displays a control to move books from one shelf to another
 ☐ │   │   ├── Control is tied to each book instance
 ☐ │   │   ╰── Functionality to move books between shelves works properly
 ☐ │   ╰── Page Refresh Persistence

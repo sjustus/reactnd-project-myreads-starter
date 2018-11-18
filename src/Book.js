@@ -4,7 +4,7 @@ import BookshelfChanger from './BookshelfChanger'
 class Book extends React.Component {
 
   render() {
-    console.log('Props', this.props);
+    //console.log('Props', this.props);
 
     return (
       <li>
@@ -15,11 +15,16 @@ class Book extends React.Component {
             *w/help form Camille B. on Slack helped me figure that I need a check first
             *check for imageLinks object, if imageLinks, get thumbnail, else display "No image"
           */}
-            <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : 'No image available'})` }}></div>
+            <div
+              className="book-cover"
+              style={{ width: 128, height: 193, backgroundImage: `url(${this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : 'No image available'})` }}>
+            </div>
+
             <div className="book-shelf-changer">
               <BookshelfChanger />
             </div>
           </div>
+          
           <div className="book-title">{this.props.book.title}</div>
           {/* Authors prop is array - 1st check if author, if yes display first, if no display 'No author...'*/}
           <div className="book-authors">{this.props.book.authors[0] ? this.props.book.authors[0] : 'No author available'}</div>
