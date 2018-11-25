@@ -21,10 +21,10 @@ class Book extends React.Component {
             </div>
 
             <div className="book-shelf-changer">
-              <BookshelfChanger />
+              <BookshelfChanger books={this.props.books} book={this.props.book} key={this.props.book.id} handleChange={this.props.handleChange}/>
             </div>
           </div>
-          
+
           <div className="book-title">{this.props.book.title}</div>
           {/* Authors prop is array - 1st check if author, if yes display first, if no display 'No author...'*/}
           <div className="book-authors">{this.props.book.authors[0] ? this.props.book.authors[0] : 'No author available'}</div>

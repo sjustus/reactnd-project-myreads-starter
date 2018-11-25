@@ -13,7 +13,7 @@ class Bookshelf extends React.Component {
         <div className="bookshelf-books">
           <ol className="books-grid">
             {/* Map over books array and render book component for each - Pass Data with Props Udacity lesson for help with concept & syntax*/}
-            {this.props.books.map((book, key) => <Book book={book} key={book.id}/>)}
+            {this.props.books.map((book, key) => <Book book={book} key={book.id} handleChange={this.props.handleChange}/>)}
           </ol>
         </div>
       </div>
