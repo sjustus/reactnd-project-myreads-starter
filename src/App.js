@@ -19,11 +19,11 @@ class BooksApp extends React.Component {
     // get books from the BooksAPI - returns an array of books
     BooksAPI.getAll()
     // set the state of books to response & console.log books
-    // Reference: https://reactjs.org/docs/state-and-lifecycle.html & Udacity videos (React)
+    // Reference: https://reactjs.org/docs/state-and-lifecycle.html (syntax) & (concept) [Render UI w/ External Date] (https://classroom.udacity.com/nanodegrees/nd001/parts/f4471fff-fffb-4281-8c09-2478625c9597/modules/82766b2b-1870-4904-aa90-8ccbe63928c5/lessons/ceb0042f-3e00-4bd2-a1d4-7746ec9c138a/concepts/0147fcd7-284c-4d98-bfb6-baa843a52cd2)
     .then((resp) => {
       this.setState({
         books: resp
-      });
+      }); // end syntax from react.js
       console.log(this.state.books);
     }); // then
 
@@ -35,8 +35,8 @@ class BooksApp extends React.Component {
    * handleChange is called when select value changes
    * call update on BooksAPI to update bookshelf
    * call getall on BooksAPI to get new array of books with updated shelf
-   * for help understanding BooksAPI update function: [https://www.youtube.com/watch?v=oMsIw254rdk]
-   * for some help understanding concept [Tutorial Requests: FEND Project 6 - Walk Through (LONG)](https://www.youtube.com/watch?v=acJHkd6K5kI&=&feature=youtu.be)
+   * Demo of BooksAPI using Postman (for help understanding BooksAPI update function): [My Reads - Going Over BookAPI] (https://www.youtube.com/watch?v=oMsIw254rdk)
+   * for idea to call getAll again after calling update [Tutorial Requests: FEND Project 6 - Walk Through (LONG)](https://www.youtube.com/watch?v=acJHkd6K5kI&=&feature=youtu.be)
   */
   handleChange = (book, shelf) => {
     BooksAPI.update(book, shelf)
