@@ -11,11 +11,11 @@ Checked Box: ☑︎
 ☐ ├── ⟐ Main Page
 ☑︎ │   ├── 3 shelves, and each book is shown on correct shelf
 ☑︎ │   ├── ⬦ Displays a control to move books from one shelf to another
-☐ │   │   ├── Control is tied to each book instance
-☐ │   │   ╰── Functionality to move books between shelves works properly
-☐ │   ╰── Page Refresh Persistence
+☑︎ │   │   ├── Control is tied to each book instance
+☑︎ │   │   ╰── Functionality to move books between shelves works properly
+☑︎ │   ╰── Page Refresh Persistence
 ☐ ├── ⟐ Search Page
-☐ │   ├── Has input field
+☑︎ │   ├── Has input field
 ☐ │   ├── ⬦ Search page behaves correctly
 ☐ │   │   ├── Real-time results matching
 ☐ │   │   ├── No results when search box is cleared

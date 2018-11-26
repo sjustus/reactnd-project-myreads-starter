@@ -17,7 +17,7 @@ class Book extends React.Component {
           */}
             <div
               className="book-cover"
-              style={{ width: 128, height: 193, backgroundImage: `url(${this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : 'No image available'})` }}>
+              style={{ width: 128, height: 193, backgroundImage: `url("${this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : 'No image available'}")`}}>
             </div>
 
             <div className="book-shelf-changer">
@@ -27,7 +27,7 @@ class Book extends React.Component {
 
           <div className="book-title">{this.props.book.title}</div>
           {/* Authors prop is array - 1st check if author, if yes display first, if no display 'No author...'*/}
-          <div className="book-authors">{this.props.book.authors[0] ? this.props.book.authors[0] : 'No author available'}</div>
+          <div className="book-authors">{this.props.book.authors ? this.props.book.authors[0] : 'No author available'}</div>
         </div>
       </li>
     )
