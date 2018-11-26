@@ -12,7 +12,7 @@ class Book extends React.Component {
           <div className="book-top">
           {/*
             *imageLinks are object w/ props that contain urls - use template literal to grab url as string *
-            *w/help form Camille B. on Slack helped me figure that I need a check first
+            *w/help from someone on Slack who helped me figure that I need a check first
             *check for imageLinks object, if imageLinks, get thumbnail, else display "No image"
           */}
             <div

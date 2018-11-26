@@ -7,7 +7,7 @@ import Book from './Book'
 class SearchPage extends React.Component {
   constructor(props) {
     super(props);
-    // set state of books, query and (query) results
+    // initialize state of books, query and (query) results
     this.state = {
       books: [],
       query: '', // set to empty string
@@ -15,8 +15,8 @@ class SearchPage extends React.Component {
     }
   }
 
-  // get books from MainPage to be able to compare to books on shelf
   // books state does get passed from MainPage to SearchPage
+  // get books from MainPage to be able to compare to books on shelf
   componentDidMount() {
     // get books from the BooksAPI - returns an array of books
     BooksAPI.getAll()
@@ -32,16 +32,17 @@ class SearchPage extends React.Component {
   }
 
   // function to update query state on input change
+  // updateQuery concept and some syntax from [Lesson 3 - State Management - Controlled compontents] (https://classroom.udacity.com/nanodegrees/nd001/parts/f4471fff-fffb-4281-8c09-2478625c9597/modules/82766b2b-1870-4904-aa90-8ccbe63928c5/lessons/14331e60-a548-4cfb-a326-054545da8927/concepts/fc3f11d3-8779-4d8a-8a23-1cd782f8ddf3)
   updateQuery = (query) => {
     // set query state to query input
     this.setState({
       query: query
-    });
+    }); // end syntax from State Management lesson
     console.log(query);
     // if there is a query call showResults
     if (query) {
       this.getResults();
-      // if there isn't a query, clear results by set state to empty array
+      // if there isn't a query, clear results by setting state to empty array
     } else {
       this.setState({
         results: []
@@ -54,6 +55,7 @@ class SearchPage extends React.Component {
     BooksAPI.search(this.state.query)
     .then((resp) => {
       // if the resp returns an error, set results to an empty array (clear results)
+      // for how to access errors with resp.error: [Tutorial Requests: FEND Project 6 - Walk Through (LONG)](https://www.youtube.com/watch?v=acJHkd6K5kI&=&feature=youtu.be)
       if (resp.error) {
         return this.setState({
           results: []
@@ -81,6 +83,8 @@ class SearchPage extends React.Component {
         console.log(match);
         console.log(result);
         return result.shelf = match[0].shelf
+      } else {
+        return result.shelf = "none"
       }
     });
 
@@ -106,15 +110,3 @@ class SearchPage extends React.Component {
 }
 
 export default SearchPage
-//receive query input
-// call updateQuery on input change
-// if there is a query call function to get results
-// if there is no query, clear results by seting state to empty Array
-// when showResults is called
-// call search on BooksAPI
-// if the resp returns an error
-// set results to empty Array
-// if there no error, set results to book in resp.
-// map over each result
-// compare each result and check if it is on bookshelves
-// if it is set book

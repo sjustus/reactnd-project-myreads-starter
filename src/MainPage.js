@@ -15,7 +15,7 @@ class MainPage extends React.Component {
           <div>
           {/*
             *Filter through books on shelves to display books with matching shelf property
-            *For help w/ filter syntax (article): 'Array, Map, Filter, and Reduce in JS by John Ferris '[https://atendesigngroup.com/blog/array-map-filter-and-reduce-js]
+            *For which method to use & filter syntax (article): 'Array, Map, Filter, and Reduce in JS by John Ferris '[https://atendesigngroup.com/blog/array-map-filter-and-reduce-js]
           */}
             <Bookshelf
               shelf="Currently Reading"

@@ -6,10 +6,9 @@ import MainPage from './MainPage'
 import SearchPage from './SearchPage'
 
 class BooksApp extends React.Component {
-  // use constructor when initializing state
   constructor(props) {
     super(props);
-    // set state of books in App to pass to MainPage and SearchPage
+    // initialize books state
     this.state = {
       books: [],
     }
@@ -19,7 +18,7 @@ class BooksApp extends React.Component {
   componentDidMount() {
     // get books from the BooksAPI - returns an array of books
     BooksAPI.getAll()
-    // set the state of books to response
+    // set the state of books to response from api
     // Reference: https://reactjs.org/docs/state-and-lifecycle.html (syntax)
     .then((resp) => {
       this.setState({
@@ -32,12 +31,12 @@ class BooksApp extends React.Component {
 
 
   /*
-   * pass handleChange function down from App.js so it is available on MainPage and SearchPage
+   * declare handleChange here so that it will be accessible in MainPage and SearchPages
    * handleChange is called when select value changes
-   * call update on BooksAPI to update bookshelf -- update moves books
+   * calls update on BooksAPI to update bookshelf -- update moves books
    * call getall on BooksAPI to get new array of books with updated shelf
    * Demo of BooksAPI using Postman (for help understanding BooksAPI update function): [My Reads - Going Over BookAPI] (https://www.youtube.com/watch?v=oMsIw254rdk)
-   * for help calling getAll again after calling update [Tutorial Requests: FEND Project 6 - Walk Through (LONG)](https://www.youtube.com/watch?v=acJHkd6K5kI&=&feature=youtu.be)
+   * for how to call getAll again after calling update [Tutorial Requests: FEND Project 6 - Walk Through (LONG)](https://www.youtube.com/watch?v=acJHkd6K5kI&=&feature=youtu.be)
   */
   handleChange = (book, shelf) => {
     BooksAPI.update(book, shelf)
