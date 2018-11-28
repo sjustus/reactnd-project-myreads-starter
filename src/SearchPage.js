@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { DebounceInput } from 'react-debounce-input';
 import * as BooksAPI from './BooksAPI'
 import Book from './Book'
 
@@ -93,11 +94,21 @@ class SearchPage extends React.Component {
         <div className="search-books-bar">
           <Link to='/' className="close-search">Close</Link>
           <div className="search-books-input-wrapper">
-            {/* set value to this.state.query & onchange pass event.target.value as param to updateQuery as query */}
-            <input value={this.state.query} onChange={(event) => {this.updateQuery(event.target.value)}} type="text" placeholder="Search by title or author"/>
-
+            {/*
+              *set value to this.state.query & onchange pass event.target.value as param to updateQuery as query
+              *implemented debounce with react-debounce-input per the suggestion of reviewer
+              * referenced docs for how to implement: [React Debounce Input](https://www.npmjs.com/package/react-debounce-input)
+            */}
+            <DebounceInput
+              debounceTimeout={200}
+              value={this.state.query}
+              onChange={(event) => {this.updateQuery(event.target.value)}}
+              type="text"
+              placeholder="Search by title or author"
+            />
           </div>
         </div>
+
         <div className="search-books-results">
           <ol className="books-grid">
             {/* map over results and display a book for each*/}

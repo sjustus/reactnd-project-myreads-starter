@@ -21,6 +21,8 @@ To get started:
 
   A backend server was provided by Udacity called [`BooksAPI.js`](src/BooksAPI.js)
 
+  Debounce was implemented with [React Debounce Input](https://www.npmjs.com/package/react-debounce-input)
+
 ## Contributing
 
 This repository is a project required for completion of the Front End Nanodegree, therefore pull requests are not likely to be accepted.
