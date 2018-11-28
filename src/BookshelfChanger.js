@@ -8,8 +8,9 @@ class BookshelfChanger extends React.Component {
        * onChange call handleChange function passing book and event target
        * use arrow function in onChange to pass params and bind this to instance [Passing Functions to Components](https://reactjs.org/docs/faq-functions.html)
        * For how to pass event.target.value as param [Tutorial Requests: FEND Project 6 - Walk Through (LONG)](https://www.youtube.com/watch?v=acJHkd6K5kI&=&feature=youtu.be)
+       * reviewer suggestion -- change value to defaultValue to set an initial value
       */
-      <select value={this.props.book.shelf}  onChange={(event) => {this.props.handleChange(this.props.book, event.target.value)}}>
+      <select defaultValue={this.props.book.shelf}  onChange={(event) => {this.props.handleChange(this.props.book, event.target.value)}}>
         <option value="move" disabled>Move to...</option>
         <option value="currentlyReading">Currently Reading</option>
         <option value="wantToRead">Want to Read</option>

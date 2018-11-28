@@ -111,8 +111,10 @@ class SearchPage extends React.Component {
 
         <div className="search-books-results">
           <ol className="books-grid">
-            {/* map over results and display a book for each*/}
-            {this.state.results.map((book, shelf, key) => <Book book={book} key={book.id} handleChange={this.props.handleChange} shelf={this.props.shelf}/>)}
+            {/* map over results and display a book for each
+              * remove unnecessary parameters "shelf" and "key" from map -- reviewer suggestion
+            */}
+            {this.state.results.map((book) => <Book book={book} key={book.id} handleChange={this.props.handleChange} shelf={this.props.shelf}/>)}
           </ol>
         </div>
       </div>
